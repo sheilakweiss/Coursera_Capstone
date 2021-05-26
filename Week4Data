@@ -1,0 +1,19 @@
+DIRECTIONS: Describe the data that you will be using to solve the problem or execute your idea. Remember that you will 
+need to use the Foursquare location data to solve the problem or execute your idea... make sure that you provide adequate 
+explanation and discussion, with examples, of the data that you will be using, even if it is only Foursquare location data.
+
+NOTE: The "Business Problem" portion is in a separate file.
+
+DATA: This analysis will use venue information directly from FourSquare, as well as location coordinates from
+Nominatim. The following Colorado cities will be examined: Denver, Aurora, Pueblo, Colorado Springs, Fort Collins, 
+Lakewood, Thornton, Arvada, Westminster, and Centennial. Only venues that fall under the "Medical Center" category 
+(ID "4bf58dd8d48988d104941735") will be included. Note that this category includes multiple sub-categories, 
+such as "Hospital", "Emergency Room", and "Urgent Care". Within each city, the data will be massaged to find the 
+count of nearby facilities of each type of sub-category.
+
+First, latitude and longitude values will be retrieved via Nominatim. Then, a FourSquare URL request will be used with 
+each city's latitude and longitude, to get the maximum venue records (50 for free accounts) for venues with a 
+categoryID of "4bf58dd8d48988d104941735". Given each venue record, the counts of each category sub-type within a city 
+will be computed. A visualization of the results will be created, to assist the target audience in their decision.
+For instance, someone that knows they want to work in an emergency room would give preference to those cities with the 
+highest count of venues in the "Emergency Room" category.
